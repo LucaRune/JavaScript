@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ex3</title>
+    <meta charset="utf-8">
+    <style>
+        /* 앞에 .을 붙이는건 class 를 의미, # 을 붙이는건 id 를 의미
+            클래스라는 속성은 그룹핑하고 싶은 것들을 같은 이름의 클래스로 지정
+            id는 같은 이름의 id는 사용할 수 없음, id는 식별하는 것
+            클래스 선택자가 더 포괄적, id 선택자는 무언가를 타겟팅
+            id를 통해 예외적으로 디자인을 바꿀 수 있음, class 위에 id
+            id가 우선순위가 높음 ex) id > class > span
+            id 선택자, class 선택자, 태그 선택자*/
+        .js{
+            font-weight: bold;
+            color: indianred;
+        }
+        #first{
+            color: seagreen;
+        }
+        span{   /* .도 #도 붙이지 않은것은 모든 span 태그를 의미하는 것 */
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+<body class="vsc-initialized">
+<h1><a href="index.html">WEB</a></h1>
+<h2 style="background-color:coral; color: powderblue">JavaScript</h2>    <!-- 스타일 안에는 css -->
+<!-- div 는 어떤 기능도 없음, 제어하고 싶은 부분을 감싸주는 무색 무취의 태그, 줄바꿈이 되는 태그 -->
+<!--  span 은 div 와 같지만, 줄바꿈을 사용하지 않음 -->
+<p>The <span id="first" class="js">World</span> Wide <span>Web</span> (abbreviated WWW or the Web) is an information
+    space where documents and other web resources are identified by Uniform Resource Locators (URLs),
+    interlinked by hypertext links, and can be accessed via the Internet.[1] English scientist
+    Tim Berners-Lee invented the <span class="js">World</span> Wide Web in 1989.
+    He wrote the first <span>web</span> browser computer program in 1990 while employed at CERN in Switzerland.
+    [2][3] The Web browser was released outside of CERN in 1991, first to other research institutions starting
+    in January 1991 and to the general public on the Internet in August 1991.
+</p>
+</body>
+</html>
