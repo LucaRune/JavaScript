@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <!-- 배열이라는 도구는 정보를 담는 그릇이면서 동시에 정보가 순서대로 저장되는 특징 -->
+    <!-- 순서 없이 저장하는 것이 객체, 이름이 있는 정리정돈 상자 느낌 -->
+    <!--  배열을 대괄호[], 객체는 중괄호{} 사용 -->
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+        var coworkers = {   // 객체에는 함수도 담을 수 있음
+            "programmer":"egoing",
+            "designer":"leezche"
+        };
+        document.write("programmer : "+coworkers.programmer+"<br>");   // . 은 오브젝트 엑세스 오퍼레이터 라고 불림, 객체에 엑세스하는 오퍼레이터
+        document.write("designer : "+coworkers.designer+"<br>");
+        coworkers.bookkeeper = "duru";
+        document.write("bookkeeper : "+coworkers.bookkeeper+"<br>");
+        coworkers["data scientist"] = "taeho";  // 그냥.으로는 이름에 띄어쓰기를 할 수 없음, 배열 형식으로 띄어쓰기 사용
+        document.write("data scientist : "+coworkers["data scientist"]+"<br>");
+    </script>
+    <h2>Iterate</h2>
+    <script>
+        for(var key in coworkers){  // coworkers 에 있는 객체들을 그 수만큼 중괄호의 코드가 실행되는데 키 값들 하나하나 변수값으로 세팅해주는 코드
+            document.write(key + ' : ' + coworkers[key] + '<br>');
+        }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+        /*
+      var function shollAll(){
+      }
+      function shollAll(){
+      } 과 같은 표현
+      */
+        coworkers.showAll = function (){    // 객체에 소속된 변수의 값으로 함수를 지정할 수 있고, 객체에 소속된 함수를 만들 수 있다.
+            for(var key in this){
+                document.write(key + ' : ' + this[key] + '<br>');
+            }
+        }
+        coworkers.showAll();
+        // 객체에 소속된 함수를 메소드라고 함
+        // 객체에 소속된 변수는 변수말고 프로퍼티 라고 한다.
+
+
+    </script>
+
+
+</body>
+</html>

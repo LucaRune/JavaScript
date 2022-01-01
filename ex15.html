@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EX12</title>
+    <!-- 동작하는 내용은 똑같지만 코드를 효율적으로 하는 것을 '리팩토링' -->
+    <!-- 함수는 리팩토링에서 중요한 것 중 하나 -->
+    <script>
+        var Links = {
+            setColor:function(color){
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = color;
+                    i = i + 1;
+                }
+        }
+        }
+        var Body = {
+            setColor:function (color){
+                document.querySelector('body').style.color = color;
+            },  // 객체는 프로퍼티를 구분할때 , 사용
+            setBackgroundColor:function (color){
+                document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+            // document 는 객체, 뒤에 querySelector 는 document 라는 객체에 속해있는 함수.
+            // 객체에 속해 있는 함수는 함수라고 하지 않고 '메소드' 라고 부른다.
+        function nightDayHandler(self) {    // self 라는 매개변수
+            var target = document.querySelector('body');
+            if (self.value === 'night') {
+                Body.setBackgroundColor('black');
+                Body.setColor('white');
+                self.value = 'day';
+
+                Links.setColor('powderblue');
+            } else {
+                Body.setBackgroundColor('white');
+                Body.setColor('black');
+                self.value = 'night';
+
+                Links.setColor('blue');
+            }
+        }
+    </script>
+</head>
+<body>
+<h1><a href="index.html">WEB</a></h1>
+<input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
+<ol>
+    <li><a href="1.html">HTML</a></li>
+    <li><a href="2.html">CSS</a></li>
+    <li><a href="3.html">JavaScript</a></li>
+</ol>
+<h2>JavaScript</h2>
+<p>
+    JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based,
+    multi-paradigm, and interpreted programming language. Alongside HTML and CSS, JavaScript is one of the three core
+    technologies of World Wide Web content production. It is used to make webpages interactive and provide online
+    programs, including video games. The majority of websites employ it, and all modern web browsers support it without
+    the need for plug-ins by means of a built-in JavaScript engine. Each of the many JavaScript engines represent a
+    different implementation of JavaScript, all based on the ECMAScript specification, with some engines not supporting
+    the spec fully, and with many engines supporting additional features beyond ECMA.
+</p>
+</body>
+</html>
