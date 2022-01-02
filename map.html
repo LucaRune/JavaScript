@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map()</title>
+</head>
+<body>
+<!-- map() -->
+<!-- 해당 배열의 각 요소에 대해 새로운 배열을 생성하는 메소드-->
+<!-- map을 사용하더라도 본래 배열은 변경되지 않음-->
+    <script>
+        //Array.map([currentValue],[index],[array])
+        // currentValue : 처리할 현재 요소(값)
+        // index : 처리할 현재요소의 인덱스
+        // array : forEach 를 호출한 배열, 현재 배열
+        let arrNumber = [2, 23, 64, 1];
+        let newArr = arrNumber.map(function (value){
+            return value *2;
+        })
+        document.write(newArr+'<br/>');
+        document.write(arrNumber+'<br/>');
+        //  결과
+        //  4,46,128,2      : arrNumber 에 곱하기 2한 값이 들어감
+        //  2,23,64,1       : 본래 arrNumber 값은 그대로 보존\
+
+        //array.map(callbackFunction(currnetValue,index,array), thisArg)
+        // thisArg : callbackFunction 내에서 this 로 사용될 값
+        const days = ["Mon","Tue","Wed","Thus","Fri"];
+        // 모든 값에 숫자를 추가 -> map() 함수 이용
+        const smilmingDays = days.map(day => '😀${day}');
+        console.log(smilmingDays);
+
+        const addsmile = day => '😀${day}';
+        const smileDays = days.map(addsmile);
+        document.write(smileDays);
+
+        const smilingDays = days.map((day,index) => '#${index} ${day}');
+        console.log(smilingDays);
+
+        var numbers = [1,2,3,4,5,6,7,8];
+        function multiplyTwo(number){
+            return number * 2;
+        }
+        var newnumbers = numbers.map(multiplyTwo);
+        console.log(newnumbers);
+
+    </script>
+
+
+</body>
+</html>
